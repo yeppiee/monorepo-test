@@ -9,7 +9,7 @@ export interface ServerConfigParams {
 }
 
 export class ServerConfig {
-	#logger: Logger
+	#logger!: Logger
 	constructor(private readonly params: ServerConfigParams) {
 		if (!this.params.port) {
 			this.params.port = PORT
