@@ -1,47 +1,145 @@
-# Svelte + TS + Vite
+# TypeScript Monorepos Course
 
-This template should help get you started developing with Svelte and TypeScript in Vite.
+This repository contains the code and exercises for the TypeScript Monorepos course. The project is a seed catalog application built with Svelte, TypeScript, and Express.
 
-## Recommended IDE Setup
+## Prerequisites
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+- Node.js (version 22.16.0 or higher)
+- npm (version 11.4.1 or higher)
+- Git
 
-## Need an official Svelte framework?
+## Getting Started
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+### 1. Clone the Repository
 
-## Technical considerations
-
-**Why use this over SvelteKit?**
-
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
-
-This template contains as little as possible to get started with Vite + TypeScript + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
-
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
-
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
-
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
-
-**Why include `.vscode/extensions.json`?**
-
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
-
-**Why enable `allowJs` in the TS template?**
-
-While `allowJs: false` would indeed prevent the use of `.js` files in the project, it does not prevent the use of JavaScript syntax in `.svelte` files. In addition, it would force `checkJs: false`, bringing the worst of both worlds: not being able to guarantee the entire codebase is TypeScript, and also having worse typechecking for the existing JavaScript. In addition, there are valid use cases in which a mixed codebase may be relevant.
-
-**Why is HMR not preserving my local component state?**
-
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/rixo/svelte-hmr#svelte-hmr).
-
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
-
-```ts
-// store.ts
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
+```bash
+git clone git@github.com:mike-north/ts-monorepos-v2.git
+cd ts-monorepos-v2
 ```
+
+### 2. Node Version Management
+
+This project uses Node.js version 22.16.0. If you have `nvm` (Node Version Manager) installed, you can automatically use the correct version:
+
+```bash
+nvm use
+```
+
+If you don't have `nvm`, you can install Node.js 22.16.0 directly from [nodejs.org](https://nodejs.org/).
+
+### 3. Install Dependencies
+
+Install all project dependencies using npm:
+
+```bash
+npm install
+```
+
+This will install both development and production dependencies as specified in `package.json`.
+
+## Available Scripts
+
+### Development Scripts
+
+- **`npm run dev`** - Start both the server and client in development mode with hot reload
+  - Runs the Express server and Vite dev server concurrently
+  - Server runs on the backend, client runs on the frontend
+  - Uses colored output to distinguish between server (yellow) and client (blue) logs
+
+- **`npm run dev-server`** - Start only the Express server in development mode
+  - Runs the backend API server using `tsx`
+
+- **`npm run dev-client`** - Start only the Vite development server
+  - Runs the frontend Svelte application
+
+### Build Scripts
+
+- **`npm run build`** - Build the project for production
+  - Creates optimized build files in the `dist` directory
+
+- **`npm run preview`** - Preview the production build locally
+  - Serves the built application for testing
+
+### Testing Scripts
+
+- **`npm run test`** - Run tests in watch mode
+  - Uses Vitest for running tests
+  - Automatically re-runs tests when files change
+
+- **`npm run test:run`** - Run tests once (no watch mode)
+  - Useful for CI/CD pipelines
+
+- **`npm run test:ui`** - Run tests with Vitest UI
+  - Opens a web interface for running and viewing tests
+
+- **`npm run test:coverage`** - Run tests with coverage report
+  - Generates code coverage reports
+
+### Quality Assurance Scripts
+
+- **`npm run check`** - Run TypeScript and Svelte type checking
+  - Validates TypeScript types across the project
+
+- **`npm run lint`** - Run ESLint to check code quality
+  - Checks for code style and potential issues
+
+## Project Structure
+
+```
+ts-monorepos-v2/
+├── src/
+│   ├── server/          # Express server code
+│   ├── lib/             # Shared library code
+│   ├── models/          # Data models
+│   └── utils/           # Utility functions
+├── tests/               # Test files
+├── public/              # Static assets
+├── dist/                # Build output (generated)
+└── coverage/            # Test coverage reports (generated)
+```
+
+## Tech Stack
+
+- **Frontend**: Svelte 5, TypeScript, Tailwind CSS, DaisyUI
+- **Backend**: Express.js, TypeScript
+- **Build Tool**: Vite
+- **Testing**: Vitest, Testing Library
+- **Linting**: ESLint
+- **Styling**: Tailwind CSS, PostCSS, Sass
+
+## Getting Started with Development
+
+1. **Start the development environment**:
+   ```bash
+   npm run dev
+   ```
+
+2. **Run tests**:
+   ```bash
+   npm run test
+   ```
+
+3. **Check code quality**:
+   ```bash
+   npm run lint
+   npm run check
+   ```
+
+4. **Build for production**:
+   ```bash
+   npm run build
+   npm run preview
+   ```
+
+## Course Workflow
+
+This repository is designed to support a hands-on TypeScript monorepos course. Throughout the course, you'll work with:
+
+- TypeScript configuration and compilation
+- Monorepo structure and organization
+- Shared libraries and dependencies
+- Build tools and bundling
+- Testing strategies
+- Code quality and linting
+
+Happy coding! 🚀
