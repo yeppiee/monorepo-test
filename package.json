@@ -4,35 +4,55 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev-server": "ts-node src/server/index.ts",
+    "dev-server": "tsx src/server/index.ts",
     "dev-client": "vite",
     "dev": "concurrently -n \"Server,Client\" -c \"yellow,blue\" \"npm run dev-server\" \"npm run dev-client\"",
     "build": "vite build",
     "preview": "vite preview",
-    "check": "svelte-check --tsconfig ./tsconfig.app.json && tsc -p tsconfig.node.json"
+    "check": "svelte-check --tsconfig ./tsconfig.app.json && tsc -p tsconfig.node.json",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint ."
   },
   "devDependencies": {
+    "@eslint/js": "^9.28.0",
     "@sveltejs/vite-plugin-svelte": "^5.0.3",
     "@tailwindcss/postcss": "^4.1.8",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/svelte": "^5.2.8",
     "@tsconfig/svelte": "^5.0.4",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
+    "@vitest/coverage-v8": "^3.2.3",
+    "@vitest/ui": "^3.2.3",
     "autoprefixer": "^10.4.21",
     "concurrently": "^9.1.2",
     "daisyui": "^5.0.43",
+    "eslint": "^9.28.0",
+    "jsdom": "^26.1.0",
     "postcss": "^8.5.4",
     "prettier": "^3.5.3",
+    "prettier-plugin-svelte": "^3.4.0",
     "sass-embedded": "^1.89.2",
     "svelte": "^5.28.1",
     "svelte-check": "^4.1.6",
     "tailwindcss": "^4.1.8",
     "ts-node": "^10.9.2",
+    "tsx": "^4.20.0",
     "typescript": "~5.8.3",
-    "vite": "^6.3.5"
+    "typescript-eslint": "^8.34.0",
+    "vite": "^6.3.5",
+    "vitest": "^3.2.3"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^5.1.0",
     "yaml": "^2.8.0"
+  },
+  "volta": {
+    "node": "22.16.0",
+    "npm": "11.4.1"
   }
 }

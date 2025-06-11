@@ -1,8 +1,7 @@
-import express from "express";
 import * as yaml from "yaml";
-import cors from 'cors'
 import * as fs from "fs";
 import path from "path";
+import { initApp } from "./app";
 
 const data = fs.readFileSync(
   path.join(process.cwd(), "src", "data", "seeds.yml"),
@@ -12,8 +11,7 @@ const seeds = yaml.parse(data);
 
 const PORT = process.env.PORT || 3000;
 
-const app = express();
-app.use(cors({ origin: '*' }))
+const app = initApp()
 
 app.get("/api/seeds", (req, res) => {
   res.json(seeds);
@@ -21,5 +19,4 @@ app.get("/api/seeds", (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`logger listening on PORT ${PORT}`);
-
 });
