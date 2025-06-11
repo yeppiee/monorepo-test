@@ -1,4 +1,8 @@
-import type { USDAHardinessZoneRangeMap, SeedPacketInfo, Distance } from '../models/seed-packet.model.js'
+import type {
+	USDAHardinessZoneRangeMap,
+	SeedPacketInfo,
+	Distance,
+} from '../models/seed-packet.model.js'
 
 /**
  * Formats USDA hardiness zone data into a human-readable string
@@ -56,7 +60,7 @@ export function formatDistance(distance: Distance): string {
 	if (distance.unit === 'inches') {
 		return `${distance.value} in`
 	}
-	
+
 	// For other units, include space for readability
 	return `${distance.value} ${distance.unit}`
 }
@@ -81,7 +85,7 @@ export function formatLightPreference(lightPreference: string): string {
 
 /**
  * Formats water needs into more readable format
- * @param waterNeeds - Water needs enum value  
+ * @param waterNeeds - Water needs enum value
  * @returns Formatted water needs string
  */
 export function formatWaterNeeds(waterNeeds: string): string {
@@ -110,7 +114,7 @@ export function wrapText(text: string, maxCharsPerLine: number = 12): string[] {
 
 	for (const word of words) {
 		const testLine = currentLine ? `${currentLine} ${word}` : word
-		
+
 		if (testLine.length <= maxCharsPerLine) {
 			currentLine = testLine
 		} else {
@@ -123,10 +127,10 @@ export function wrapText(text: string, maxCharsPerLine: number = 12): string[] {
 			}
 		}
 	}
-	
+
 	if (currentLine) {
 		lines.push(currentLine)
 	}
-	
+
 	return lines
-} 
+}

@@ -1,6 +1,11 @@
 <script lang="ts">
 import type { SeedPacketModel } from '../models/seed-packet.model.js'
-import { formatUSDAZone, formatSeedInfo, formatDistance, formatEdibleParts } from '../utils/formatting.js'
+import {
+	formatUSDAZone,
+	formatSeedInfo,
+	formatDistance,
+	formatEdibleParts,
+} from '../utils/formatting.js'
 
 interface Props {
 	seedPacket: SeedPacketModel
@@ -9,7 +14,7 @@ interface Props {
 const { seedPacket }: Props = $props()
 </script>
 
-<div class="p-3 rounded-lg ">
+<div class="p-3 rounded-lg">
 	<!-- Header Section -->
 	<div class="text-center mb-3">
 		<div class="flex justify-center mb-2">

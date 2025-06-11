@@ -14,7 +14,8 @@
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "format": "prettier --write src/**/*.{ts,svelte} tests/**/*.ts {tailwind.config.js,postcss.config.cjs,vite.config.ts,svelte.config.js,eslint.config.mts}"
   },
   "devDependencies": {
     "@eslint/js": "^9.28.0",
