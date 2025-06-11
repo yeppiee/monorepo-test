@@ -5,7 +5,7 @@ This repository contains the code and exercises for the TypeScript Monorepos cou
 ## Prerequisites
 
 - Node.js (version 22.16.0 or higher)
-- npm (version 11.4.1 or higher)
+- pnpm (version 10.0.0 or higher)
 - Git
 
 ## Getting Started
