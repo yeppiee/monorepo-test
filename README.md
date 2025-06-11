@@ -62,12 +62,12 @@ This will install both development and production dependencies as specified in `
 
 ### Testing Scripts
 
-- **`npm run test`** - Run tests in watch mode
+- **`npm run test`** - Run tests once (no watch mode)
+  - Useful for CI/CD pipelines
+
+- **`npm run test:watch`** - Run tests in watch mode
   - Uses Vitest for running tests
   - Automatically re-runs tests when files change
-
-- **`npm run test:run`** - Run tests once (no watch mode)
-  - Useful for CI/CD pipelines
 
 - **`npm run test:ui`** - Run tests with Vitest UI
   - Opens a web interface for running and viewing tests
