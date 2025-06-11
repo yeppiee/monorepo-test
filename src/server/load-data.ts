@@ -8,12 +8,11 @@ const DATA_FILE_PATH = path.join(process.cwd(), 'data', 'seeds.yml')
 const data = fs.readFileSync(DATA_FILE_PATH, 'utf8')
 
 interface SeedData {
-  seedPackets: SeedPacketModel[]
+	seedPackets: SeedPacketModel[]
 }
 
-export async function loadData(): Promise<SeedData> {
-  const seeds: SeedData = yaml.parse(data)
-  return seeds
+export function loadData(): SeedData {
+	return yaml.parse(data) as SeedData
 }
 
 export default loadData

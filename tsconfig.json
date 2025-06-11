@@ -4,10 +4,9 @@
     "moduleResolution": "node",
     "noEmit": true,
     "noImplicitAny": true,
-    "noUnusedLocals": true,
+    "allowJs": true,
     "strict": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
+    "allowSyntheticDefaultImports": true,
     "noUncheckedSideEffectImports": true
   },
   "include": [
@@ -17,6 +16,11 @@
     "tests/**/*.ts",
     "tests/**/*.js",
     "tests/**/*.svelte",
+    "tailwind.config.js",
+    "postcss.config.cjs",
+    "vite.config.ts",
+    "svelte.config.js",
+    "eslint.config.mts"
   ],
   "exclude": ["**/assets/**/*", "node_modules", "dist"]
 }

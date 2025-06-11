@@ -2,9 +2,9 @@ import {  Router } from "express";
 import ServerConfig from "./config";
 import loadData from "./load-data";
 
-export async function createRouter(cfg: ServerConfig): Promise<Router> {
+export function createRouter(cfg: ServerConfig): Router {
   const router = Router();
-  const seeds = await loadData()
+  const seeds = loadData()
   router.get("/seeds", (req, res) => {
     cfg.logger.info("Responding with seed list")
     res.json(seeds);

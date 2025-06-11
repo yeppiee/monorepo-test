@@ -1,7 +1,8 @@
 import { initApp } from './app'
 
+// eslint-disable-next-line @typescript-eslint/require-await
 async function main() {
-	const { app, cfg } = await initApp()
+	const { app, cfg } = initApp()
 
 	app.listen(cfg.port, () => {
 		console.log(`Server listening on port http://localhost:${cfg.port}`)

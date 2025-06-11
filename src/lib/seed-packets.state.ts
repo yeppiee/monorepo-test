@@ -48,10 +48,10 @@ export async function fetchSeedPackets() {
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-    const data = (await response.json()).seedPackets;
+    const data = (await response.json()) as { seedPackets: SeedPacketModel[] };
     seedPacketsState.update(state => ({ 
       ...state, 
-      seedPackets: data,
+      seedPackets: data.seedPackets,
       loading: false 
     }));
   } catch (e) {
