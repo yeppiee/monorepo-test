@@ -1,6 +1,6 @@
 <script lang="ts">
-import type { SeedPacketModel } from '../models/seed-packet.model'
-import { formatUSDAZone, formatSeedInfo, formatDistance, formatEdibleParts } from '../utils/formatting'
+import type { SeedPacketModel } from '../models/seed-packet.model.js'
+import { formatUSDAZone, formatSeedInfo, formatDistance, formatEdibleParts } from '../utils/formatting.js'
 
 interface Props {
 	seedPacket: SeedPacketModel

@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest'
 import { get } from 'svelte/store'
-import seedPacketsState, { seedPackets, isLoading, error } from '../../src/lib/seed-packets.state'
+import seedPacketsState, { seedPackets, isLoading, error } from '../../src/lib/seed-packets.state.js'
 
 describe('State Management', () => {
   beforeEach(() => {

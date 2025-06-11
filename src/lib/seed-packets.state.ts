@@ -1,6 +1,6 @@
 import { writable, derived } from "svelte/store";
-import { type SeedPacketModel } from "../models/seed-packet.model";
-import { SeedPacketCollectionModel } from "../models/seed-packet-collection.model";
+import { type SeedPacketModel } from "../models/seed-packet.model.js";
+import { SeedPacketCollectionModel } from "../models/seed-packet-collection.model.js";
 
 interface SeedPacketsState {
   seedPackets: SeedPacketModel[];

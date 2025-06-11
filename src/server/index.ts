@@ -1,4 +1,4 @@
-import { initApp } from './app'
+import { initApp } from './app.js'
 
 // eslint-disable-next-line @typescript-eslint/require-await
 async function main() {

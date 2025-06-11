@@ -2,9 +2,9 @@
 import { Tween } from 'svelte/motion'
 import { cubicOut } from 'svelte/easing'
 import SeedPacketBack from './SeedPacketBack.svelte'
-import type { SeedPacketModel } from '../models/seed-packet.model'
-import { rgbToCss } from '../utils/color'
-import { wrapText } from '../utils/formatting'
+import type { SeedPacketModel } from '../models/seed-packet.model.js'
+import { rgbToCss } from '../utils/color.js'
+import { wrapText } from '../utils/formatting.js'
 interface Props {
 	seedPacket: SeedPacketModel
 }
