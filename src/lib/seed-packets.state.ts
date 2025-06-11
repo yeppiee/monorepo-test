@@ -1,5 +1,6 @@
 import { writable, derived } from "svelte/store";
 import { type SeedPacketModel } from "../models/seed-packet.model";
+import { SeedPacketCollectionModel } from "../models/seed-packet-collection.model";
 
 interface SeedPacketsState {
   seedPackets: SeedPacketModel[];
@@ -48,7 +49,7 @@ export async function fetchSeedPackets() {
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-    const data = (await response.json()) as { seedPackets: SeedPacketModel[] };
+    const data = (await response.json()) as SeedPacketCollectionModel;
     seedPacketsState.update(state => ({ 
       ...state, 
       seedPackets: data.seedPackets,
