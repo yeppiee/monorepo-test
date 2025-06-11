@@ -1,0 +1,38 @@
+{
+  "name": "seed-catalog",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev-server": "ts-node src/server/index.ts",
+    "dev-client": "vite",
+    "dev": "concurrently -n \"Server,Client\" -c \"yellow,blue\" \"npm run dev-server\" \"npm run dev-client\"",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.app.json && tsc -p tsconfig.node.json"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^5.0.3",
+    "@tailwindcss/postcss": "^4.1.8",
+    "@tsconfig/svelte": "^5.0.4",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "autoprefixer": "^10.4.21",
+    "concurrently": "^9.1.2",
+    "daisyui": "^5.0.43",
+    "postcss": "^8.5.4",
+    "prettier": "^3.5.3",
+    "sass-embedded": "^1.89.2",
+    "svelte": "^5.28.1",
+    "svelte-check": "^4.1.6",
+    "tailwindcss": "^4.1.8",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.8.3",
+    "vite": "^6.3.5"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "yaml": "^2.8.0"
+  }
+}
