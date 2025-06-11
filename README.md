@@ -5,7 +5,7 @@ This repository contains the code and exercises for the TypeScript Monorepos cou
 ## Prerequisites
 
 - Node.js (version 22.16.0 or higher)
-- pnpm (version 10.0.0 or higher)
+- ppnpm (version 10.0.0 or higher)
 - Git
 
 ## Getting Started
@@ -19,68 +19,105 @@ cd ts-monorepos-v2
 
 ### 2. Node Version Management
 
-This project uses Node.js version 22.16.0. If you have `nvm` (Node Version Manager) installed, you can automatically use the correct version:
+This project uses Node.js version 22.16.0. 
+
+#### Volta
+Volta is a great tool for managing node versions across different projects. Get it at [https://volta.sh](volta.sh)
+
+You can install volta in any POSIX-compliant operating system that supports `curl` by running
+```sh
+curl https://get.volta.sh | bash
+```
+You may need to close and reopen your terminal before your can verify that your environment has volta installed
+```sh
+volta --version
+> 2.0.2 
+```
+
+#### Nvm
+If you have `nvm` (Node Version Manager) installed, you can automatically use the correct version:
 
 ```bash
 nvm use
 ```
 
-If you don't have `nvm`, you can install Node.js 22.16.0 directly from [nodejs.org](https://nodejs.org/).
+### 3. Install `pnpm` if you don't have it already
+Make sure you have [`pnpm`](https://pnpm.io/) installed.
+
+If you use `volta` you can just run
+```sh
+volta install pnpm
+```
+Alternatively you can follow [`pnpm`'s direct installation instructions](https://pnpm.io/installation)
 
 ### 3. Install Dependencies
 
-Install all project dependencies using npm:
+Install all project dependencies using pnpm:
 
 ```bash
-npm install
+pnpm install
 ```
 
-This will install both development and production dependencies as specified in `package.json`.
+### 4. Test whether basic tasks work
+
+```sh
+pnpm run build      # Build the project
+pnpm run lint       # Lint the project
+pnpm run test       # Test the project
+```
+
+### 5. Test whether the `dev` script works
+
+```sh
+pnpm run dev
+```
+* You should be able to go to http://localhost:3000/api/seeds in a browser and see some JSON
+* You should be able to go to http://localhost:5173/ and see a UI that looks like this
 
 ## Available Scripts
 
 ### Development Scripts
 
-- **`npm run dev`** - Start both the server and client in development mode with hot reload
+- **`pnpm run dev`** - Start both the server and client in development mode with hot reload
   - Runs the Express server and Vite dev server concurrently
   - Server runs on the backend, client runs on the frontend
   - Uses colored output to distinguish between server (yellow) and client (blue) logs
 
-- **`npm run dev-server`** - Start only the Express server in development mode
+- **`pnpm run dev-server`** - Start only the Express server in development mode
   - Runs the backend API server using `tsx`
 
-- **`npm run dev-client`** - Start only the Vite development server
+- **`pnpm run dev-client`** - Start only the Vite development server
   - Runs the frontend Svelte application
 
 ### Build Scripts
 
-- **`npm run build`** - Build the project for production
+- **`pnpm run build`** - Build the project for production
   - Creates optimized build files in the `dist` directory
 
-- **`npm run preview`** - Preview the production build locally
+- **`pnpm run preview`** - Preview the production build locally
   - Serves the built application for testing
 
 ### Testing Scripts
 
-- **`npm run test`** - Run tests once (no watch mode)
+- **`pnpm run test`** - Run tests once (no watch mode)
   - Useful for CI/CD pipelines
 
-- **`npm run test:watch`** - Run tests in watch mode
+- **`pnpm run test:watch`** - Run tests in watch mode
   - Uses Vitest for running tests
   - Automatically re-runs tests when files change
 
-- **`npm run test:ui`** - Run tests with Vitest UI
+- **`pnpm run test:ui`** - Run tests with Vitest UI
   - Opens a web interface for running and viewing tests
 
-- **`npm run test:coverage`** - Run tests with coverage report
+- **`pnpm run test:coverage`** - Run tests with coverage report
   - Generates code coverage reports
 
 ### Quality Assurance Scripts
 
-- **`npm run check`** - Run TypeScript and Svelte type checking
+- **`pnpm run check`** - Run TypeScript and Svelte type checking
   - Validates TypeScript types across the project
 
-- **`npm run lint`** - Run ESLint to check code quality
+- **`pnpm run lint`** - Run ESLint to check code quality
   - Checks for code style and potential issues
 
 ## Project Structure
@@ -111,24 +148,24 @@ ts-monorepos-v2/
 
 1. **Start the development environment**:
    ```bash
-   npm run dev
+   pnpm run dev
    ```
 
 2. **Run tests**:
    ```bash
-   npm run test
+   pnpm run test
    ```
 
 3. **Check code quality**:
    ```bash
-   npm run lint
-   npm run check
+   pnpm run lint
+   pnpm run check
    ```
 
 4. **Build for production**:
    ```bash
-   npm run build
-   npm run preview
+   pnpm run build
+   pnpm run preview
    ```
 
 ## Course Workflow
