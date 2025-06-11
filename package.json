@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev-server": "tsx src/server/index.ts",
+    "dev-server": "tsx watch src/server/index.ts",
     "dev-client": "vite",
     "dev": "concurrently -n \"Server,Client\" -c \"yellow,blue\" \"npm run dev-server\" \"npm run dev-client\"",
     "build": "vite build",
@@ -48,8 +48,10 @@
     "vitest": "^3.2.3"
   },
   "dependencies": {
+    "@types/winston": "^2.4.4",
     "cors": "^2.8.5",
     "express": "^5.1.0",
+    "winston": "^3.17.0",
     "yaml": "^2.8.0"
   },
   "volta": {
