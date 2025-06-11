@@ -6,7 +6,7 @@
   "scripts": {
     "dev-server": "tsx --watch --watch-preserve-output src/server/index.ts",
     "dev-client": "vite",
-    "dev": "concurrently -n \"Server,Client\" -c \"yellow,blue\" \"npm run dev-server\" \"npm run dev-client\"",
+    "dev": "concurrently -n \"Server,Client\" -c \"yellow,blue\" \"pnpm run dev-server\" \"pnpm run dev-client\"",
     "build": "vite build",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.app.json && tsc -p tsconfig.node.json",
