@@ -3,7 +3,7 @@ import * as fs from 'fs'
 import path from 'path'
 import { SeedPacketModel } from '../models/seed-packet.model'
 
-const DATA_FILE_PATH = path.join(process.cwd(), 'src', 'data', 'seeds.yml')
+const DATA_FILE_PATH = path.join(process.cwd(), 'data', 'seeds.yml')
 
 const data = fs.readFileSync(DATA_FILE_PATH, 'utf8')
 
