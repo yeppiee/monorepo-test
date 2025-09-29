@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # TypeScript Monorepos Course
 
 This repository contains the code and exercises for the TypeScript Monorepos course. The project is a seed catalog application built with Svelte, TypeScript, and Express.
@@ -180,3 +181,6 @@ This repository is designed to support a hands-on TypeScript monorepos course. T
 - Code quality and linting
 
 Happy coding! 🚀
+=======
+# monorepo-test
+>>>>>>> ac13986809792ac57c8ea69047bc56eb96fbd626
