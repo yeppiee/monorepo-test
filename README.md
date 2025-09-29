@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # TypeScript Monorepos Course
 
 This repository contains the code and exercises for the TypeScript Monorepos course. The project is a seed catalog application built with Svelte, TypeScript, and Express.
@@ -20,7 +19,7 @@ cd ts-monorepos-v2
 
 ### 2. Node Version Management
 
-This project uses Node.js version 22.16.0. 
+This project uses Node.js version 22.16.0.
 
 #### Volta
 Volta is a great tool for managing node versions across different projects. Get it at [https://volta.sh](volta.sh)
@@ -32,7 +31,7 @@ curl https://get.volta.sh | bash
 You may need to close and reopen your terminal before your can verify that your environment has volta installed
 ```sh
 volta --version
-> 2.0.2 
+> 2.0.2
 ```
 
 #### Nvm
@@ -181,6 +180,3 @@ This repository is designed to support a hands-on TypeScript monorepos course. T
 - Code quality and linting
 
 Happy coding! 🚀
-=======
-# monorepo-test
->>>>>>> ac13986809792ac57c8ea69047bc56eb96fbd626
