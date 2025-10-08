@@ -25,7 +25,7 @@ export default tseslint.config(
 		},
 	},
 	{
-		ignores: ['**/assets/**/*', '**/dist'],
+		ignores: ['**/assets/**/*', '**/dist/**/*'],
 	},
 	{
 		files: ['**/tailwind.config.js'],
